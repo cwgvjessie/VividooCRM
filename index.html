@@ -2,6 +2,38 @@
 <html lang="zh-TW">
 
 <head>
+
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex" />
+<meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex" />
+
+<script>
+/** 前端閱讀密碼門檻（不記憶、每次開啟都需輸入） **/
+(async () => {
+  // 密碼：cwgvdoc（僅存雜湊，避免在原始碼放明碼）
+  const PASSWORD_HASH = "03e6f29ea231d8c5b2823dbcef46cf812bd2e5e5332878e00e22770410d5bde7";
+
+  // 每次載入都會觸發輸入（不使用 localStorage / sessionStorage）
+  const input = prompt("請輸入閱讀密碼：");
+  if (input === null) { 
+    // 使用者取消：離開頁面
+    location.replace("about:blank"); 
+    return; 
+  }
+
+  // 計算輸入密碼的 SHA-256
+  const enc = new TextEncoder().encode(input);
+  const buf = await crypto.subtle.digest("SHA-256", enc);
+  const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+
+  // 驗證
+  if (hex !== PASSWORD_HASH) {
+    alert("密碼錯誤，將離開頁面");
+    location.replace("about:blank");
+  }
+})();
+</script>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VividooCRM 系統需求文件</title>

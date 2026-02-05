@@ -8,20 +8,40 @@
   <meta name="robots" content="noindex, nofollow, noarchive" />
   <meta name="googlebot" content="noindex, nofollow, noarchive" />
 
-  <!-- 關鍵：在任何內容渲染前就隱藏內容區，避免 FOUC -->
-  <style>
-    /* 先把內容區塊關起來（雙保險：head 先隱藏） */
-    #content { display: none; }
+<style>
+  /* 初始狀態先隱藏整個網頁內容 */
+  body { display: none; }
+</style>
 
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans TC", sans-serif; margin: 0; }
-    .wrap { max-width: 920px; margin: 6vh auto; padding: 24px; }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
-    label { display: block; margin: 8px 0 6px; font-weight: 600; }
-    input[type="password"] { width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 16px; }
-    button { margin-top: 14px; padding: 10px 14px; border: 0; border-radius: 8px; background: #111827; color: #fff; font-weight: 600; cursor: pointer; }
-    .msg { color: #b91c1c; margin-top: 8px; font-size: 14px; }
-    h1 { margin-top: 0; }
-  </style>
+<script>
+  (function() {
+    const PASSWORD = 'cwgvdoc';
+    const storageKey = 'page_auth_token';
+
+    function checkAuth() {
+      // 檢查是否已經輸入過（sessionStorage 關閉分頁即失效，較安全）
+      if (sessionStorage.getItem(storageKey) === 'true') {
+        document.documentElement.style.display = 'block';
+        document.body.style.display = 'block';
+        return;
+      }
+
+      const userInput = prompt('請輸入密碼以查看內容：');
+
+      if (userInput === PASSWORD) {
+        sessionStorage.setItem(storageKey, 'true');
+        document.documentElement.style.display = 'block';
+        document.body.style.display = 'block';
+      } else {
+        alert('密碼錯誤，存取被拒。');
+        window.location.reload(); // 密碼錯誤則重新整理
+      }
+    }
+
+    // 確保 DOM 載入時執行
+    document.addEventListener('DOMContentLoaded', checkAuth);
+  })();
+</script>
 
 
 

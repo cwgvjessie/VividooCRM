@@ -3,10 +3,8 @@
 <html lang="en" theme="light">
 
 <head>
-
-  <!-- 阻擋搜尋引擎索引 -->
-  <meta name="robots" content="noindex, nofollow, noarchive" />
-  <meta name="googlebot" content="noindex, nofollow, noarchive" />
+<meta name="robots" content="noindex, nofollow, noarchive" />
+<meta name="googlebot" content="noindex, nofollow, noarchive" />
 
 <style>
   /* 初始狀態先隱藏整個網頁內容 */
@@ -26,14 +24,14 @@
         return;
       }
 
-      const userInput = prompt('請輸入閱讀密碼以查看內容：');
+      const userInput = prompt('請輸入密碼以查看內容：');
 
       if (userInput === PASSWORD) {
         sessionStorage.setItem(storageKey, 'true');
         document.documentElement.style.display = 'block';
         document.body.style.display = 'block';
       } else {
-        alert('閱讀密碼錯誤，存取被拒。');
+        alert('密碼錯誤，存取被拒。');
         window.location.reload(); // 密碼錯誤則重新整理
       }
     }
@@ -42,10 +40,6 @@
     document.addEventListener('DOMContentLoaded', checkAuth);
   })();
 </script>
-
-
-
-	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -102,8 +96,6 @@
 </head>
 
 <body>
-
-
     <div id="doc" class="markdown-body container-fluid comment-inner no-highlight-all comment-enabled" data-hard-breaks="false" lang="en-US"><h1 id="VividooCRM-系統需求文件-Product-Requirements-Document" data-id="VividooCRM-系統需求文件-Product-Requirements-Document"><a class="anchor hidden-xs" href="#VividooCRM-系統需求文件-Product-Requirements-Document" title="VividooCRM-系統需求文件-Product-Requirements-Document"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>VividooCRM 系統需求文件 (Product Requirements Document)</span></h1><h2 id="1-核心商務邏輯-Core-Business-Logic" data-id="1-核心商務邏輯-Core-Business-Logic"><a class="anchor hidden-xs" href="#1-核心商務邏輯-Core-Business-Logic" title="1-核心商務邏輯-Core-Business-Logic"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>1. 核心商務邏輯 (Core Business Logic)</span></h2><p><span>VividooCRM，整合了客戶關係管理、銷售訂單、課程活動管理、自動化行銷 (EDM) 系統。</span></p><h3 id="11-核心定義與架構-Core-Definitions-amp-Architecture" data-id="11-核心定義與架構-Core-Definitions-amp-Architecture"><a class="anchor hidden-xs" href="#11-核心定義與架構-Core-Definitions-amp-Architecture" title="11-核心定義與架構-Core-Definitions-amp-Architecture"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>1.1 核心定義與架構 (Core Definitions &amp; Architecture)</span></h3><ul>
 <li><strong><span>學員 (Students)</span></strong><span>：完成課程報名流程的正式學員（含已付款/待付款）。</span></li>
 <li><strong><span>潛客 (Leads)</span></strong><span>：僅填寫諮詢表單，尚未完成報名的潛在客戶（路人）。</span></li>
@@ -164,7 +156,7 @@
 </ul>
 </li>
 </ul><hr><h2 id="2-核心功能模組-Core-Modules" data-id="2-核心功能模組-Core-Modules"><a class="anchor hidden-xs" href="#2-核心功能模組-Core-Modules" title="2-核心功能模組-Core-Modules"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2. 核心功能模組 (Core Modules)</span></h2><h3 id="21-營銷數據儀表板-Dashboard" data-id="21-營銷數據儀表板-Dashboard"><a class="anchor hidden-xs" href="#21-營銷數據儀表板-Dashboard" title="21-營銷數據儀表板-Dashboard"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.1 營銷數據儀表板 (Dashboard)</span></h3><p><span>提供管理層與行銷人員即時的營運數據視圖。</span>
-<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/ry-8tabwbx.jpg" alt="dashboard_mockup" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
+<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/rkKeuAWvZx.jpg" alt="dashboard_mockup" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
 <li>
 <p><strong><span>篩選功能</span></strong><span>: 支援依據 </span><code>日期區間 (Date Range)</code><span> 與 </span><code>專案 (Project)</code><span> 與 </span><code>時間粒度(日/周/月/年)</code><span> 篩選數據。*</span></p>
 </li>
@@ -201,11 +193,16 @@
 </li>
 <li><strong><span>營收組合儀表板 (Revenue Composition Dashboard)</span></strong>
 <ul>
-<li><strong><span>今日數據 | 累計數據 (Today | Cumulative)</span></strong><br>
-<span>皆包含以下數據</span></li>
-<li><strong><span>總體</span></strong><span>:</span>
-<span>新增客戶 OOO | 新增報名 OOO | 總營收 $OOO (不含待付款 $OOO)</span></li>
-<li><strong><span>專案細分</span></strong><span>:</span>
+<li>
+<p><strong><span>今日數據 | 累計數據 (Today | Cumulative)</span></strong><br>
+<span>皆包含以下數據</span></p>
+</li>
+<li>
+<p><strong><span>總體</span></strong><span>:</span>
+<span>新增客戶 OOO | 新增報名 OOO | 總營收 $OOO (不含待付款 $OOO)</span></p>
+</li>
+<li>
+<p><strong><span>專案細分</span></strong><span>:</span></p>
 <ul>
 <li><span>專案 A:</span>
 <span>已付款人數 OOO | 營收 $OOO</span>
@@ -215,10 +212,18 @@
 <span>待付款人數 OOO | 待收 $OOO</span></li>
 </ul>
 </li>
-<li><span>預設顯示總體數據，收合專案數據，點擊展開，再展開所有專案數據;</span></li>
-<li><span>列出所有</span><strong><span>未達開課日期</span></strong><span>的專案；已開課(含當日開課)的專案不列</span></li>
-<li><span>列表依照開課日期，進到遠排序</span></li>
-<li><span>專案可能有5~10組</span></li>
+<li>
+<p><span>預設顯示總體數據，收合專案數據，點擊展開，再展開所有專案數據;</span></p>
+</li>
+<li>
+<p><span>列出所有</span><strong><span>未達開課日期</span></strong><span>的專案；已開課(含當日開課)的專案不列</span></p>
+</li>
+<li>
+<p><span>列表依照開課日期，進到遠排序</span></p>
+</li>
+<li>
+<p><span>專案可能有5~10組</span></p>
+</li>
 </ul>
 </li>
 </ol>
@@ -292,11 +297,11 @@
 </ul>
 </li>
 <li>
-<p><strong><span>篩選結果列表 (Result List)</span></strong><span>:</span></p>
+<p><strong><span>篩選結果列表 (Result List)</span></strong><span>:</span>
+<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/ryz4OA-wWx.png" alt="Result_List_UI" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p>
 <ul>
 <li>
-<p><span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/HkJdYabPWg.png" alt="Result_List_UI" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span>
-<strong><span>列表顯示</span></strong><span>:</span></p>
+<p><strong><span>列表顯示</span></strong><span>:</span></p>
 <ul>
 <li><strong><span>Rich Rows 設計</span></strong><span>: 採雙層顯示。</span>
 <ul>
@@ -342,7 +347,7 @@
 </li>
 <li><strong><span>專案類型</span></strong><span>：典範大師/趨勢主題/營運實戰</span></li>
 </ul><h4 id="242-專案管理列表-Project-List" data-id="242-專案管理列表-Project-List"><a class="anchor hidden-xs" href="#242-專案管理列表-Project-List" title="242-專案管理列表-Project-List"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.2 專案管理列表 (Project List)</span></h4><p><span>進入模組的預設首頁，以「專案 (Project)」為管理維度。</span></p><h5 id="2421-列表欄位定義-UI-Columns" data-id="2421-列表欄位定義-UI-Columns"><a class="anchor hidden-xs" href="#2421-列表欄位定義-UI-Columns" title="2421-列表欄位定義-UI-Columns"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.2.1 列表欄位定義 (UI Columns)</span></h5><p><span>列表需包含以下資訊：</span>
-<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/BJ5htTZDZl.png" alt="Project_List" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
+<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/B1pBdA-PZx.png" alt="Project_List" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
 <li><strong><span>專案編號</span></strong><span>：唯一識別碼 (例如: LA1120500)。</span></li>
 <li><strong><span>專案名稱</span></strong><span>：顯示專案全名。</span></li>
 <li><strong><span>報名人數</span></strong><span>：該專案下所有課程的總不重複報名人數。</span></li>
@@ -379,7 +384,7 @@
 <p><strong><span>進入下一層</span></strong><span>：點擊列表 </span><strong><span>「任意區域 (整列 Clickable)」</span></strong><span>，即進入該專案的 </span><strong><span>[2.4.3 課程列表]</span></strong><span>。</span></p>
 </li>
 </ul><h5 id="2424-專案新增與編輯-Project-Create-and-Edit" data-id="2424-專案新增與編輯-Project-Create-and-Edit"><a class="anchor hidden-xs" href="#2424-專案新增與編輯-Project-Create-and-Edit" title="2424-專案新增與編輯-Project-Create-and-Edit"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.2.4 專案新增與編輯 (Project Create and Edit)</span></h5><p><span>包含「基本資訊」與「財務成本結構」設定。</span></p><blockquote>
-<p><span>**👉 [「新增與編輯」的prototype]</span><a href="https://cwgvjessie.github.io/VividooCRM//Project_Create_Edit_prototype.html" target="_blank" rel="noopener"><span>(Project_Create_Edit_prototype.html)**</span></a></p>
+<p><span>**👉 [一定點我看</span><a href="https://cwgvjessie.github.io/VividooCRM/Project_Create_Edit_prototype.html" target="_blank" rel="noopener"><span>「新增與編輯」的prototype</span></a><span>]</span></p>
 </blockquote><p><strong><span>A. 欄位規格表</span></strong></p><table>
 <thead>
 <tr>
@@ -481,10 +486,9 @@
 <li><span>成本結構：僅複製項目名稱、費用留空</span></li>
 </ul><h4 id="243-課程列表-Course-List" data-id="243-課程列表-Course-List"><a class="anchor hidden-xs" href="#243-課程列表-Course-List" title="243-課程列表-Course-List"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.3 課程列表 (Course List)</span></h4><blockquote>
 <ul>
-<li><span>點擊專案列表任意專案，進入該專案的課程列表。</span>
-<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/r1h9taWvZg.png" alt="Course_List" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></li>
+<li><span>點擊專案列表任意專案，進入該專案的課程列表。</span></li>
 </ul>
-</blockquote><h5 id="2431-介面欄位定義-UI-Columns" data-id="2431-介面欄位定義-UI-Columns"><a class="anchor hidden-xs" href="#2431-介面欄位定義-UI-Columns" title="2431-介面欄位定義-UI-Columns"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.3.1 介面欄位定義 (UI Columns)</span></h5><ul>
+</blockquote><h5 id="2431-介面欄位定義-UI-Columns" data-id="2431-介面欄位定義-UI-Columns"><a class="anchor hidden-xs" href="#2431-介面欄位定義-UI-Columns" title="2431-介面欄位定義-UI-Columns"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.3.1 介面欄位定義 (UI Columns)</span></h5><p><span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/H1iLOCbPbg.png" alt="Course_List" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
 <li><strong><span>課程編號</span></strong><span>：唯一識別碼 (例如: 2211)。</span></li>
 <li><strong><span>專案編號</span></strong><span>：顯示所屬專案 ID。</span></li>
 <li><strong><span>課程名稱</span></strong><span>：完整的課程標題與說明。</span></li>
@@ -559,7 +563,7 @@
 <li><strong><span>維度獨立性</span></strong><span>：修改「課堂」的出席人，</span><strong><span>不會</span></strong><span> 自動連動修改「住宿」的入住人，需分別操作（如情境 1）。</span></li>
 </ul>
 </li>
-</ul><h5 id="2452-學員列表介面-Interface" data-id="2452-學員列表介面-Interface"><a class="anchor hidden-xs" href="#2452-學員列表介面-Interface" title="2452-學員列表介面-Interface"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.5.2 學員列表介面 (Interface)</span></h5><p><span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/HkcFKa-DWg.png" alt="student._List_UI" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
+</ul><h5 id="2452-學員列表介面-Interface" data-id="2452-學員列表介面-Interface"><a class="anchor hidden-xs" href="#2452-學員列表介面-Interface" title="2452-學員列表介面-Interface"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.4.5.2 學員列表介面 (Interface)</span></h5><p><span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/rJswuCZvZl.png" alt="student._List_UI" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
 <li><strong><span>維度切換 (Dimension Switcher)</span></strong><span>：</span>
 <ul>
 <li><span>利用 </span><strong><span>「場次 (Day) / 品項 (Item)」</span></strong><span> 作為切換視角。</span></li>
@@ -632,7 +636,7 @@
 <li><strong><span>全課程學員匯出</span></strong><span>：支援一次匯出所有 View 與場次之學員名單（可分 Sheet 或合併顯示），以利完整備份或線下檢核。</span></li>
 </ul>
 </li>
-</ul><h3 id="25-報到管理-Check-in-Management" data-id="25-報到管理-Check-in-Management"><a class="anchor hidden-xs" href="#25-報到管理-Check-in-Management" title="25-報到管理-Check-in-Management"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.5 報到管理 (Check-in Management)</span></h3><p><span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/SJ7Hq6bDZx.png" alt="Check-in_list_wireframe" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
+</ul><h3 id="25-報到管理-Check-in-Management" data-id="25-報到管理-Check-in-Management"><a class="anchor hidden-xs" href="#25-報到管理-Check-in-Management" title="25-報到管理-Check-in-Management"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.5 報到管理 (Check-in Management)</span></h3><p><span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/S1PO_A-Pbe.png" alt="Check-in_list_wireframe" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p><ul>
 <li>
 <p><strong><span>報到列表 (Registration List)</span></strong><span>:</span></p>
 <ul>
@@ -649,8 +653,8 @@
 </ul>
 </li>
 <li>
-<p><strong><span>現場報到 (Check-in)</span></strong><span>:</span>
-<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/ryDL9Tbw-l.jpg" alt="checkin_qrcode_mockup" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p>
+<p><strong><span>現場報到 (Check-in)</span></strong><span>:</span><br>
+<span class="image-toolbar-wrapper inline-block w-fit h-fit [&amp;:not([data-image-error])]:cursor-zoom-in" style="width: auto; height: auto;"><div class="code-toolbar cursor-default tw-hide md:block"><div class="flex flex-row gap-0.5 rounded-lg bg-element-bg-default px-[7px] py-[5px]"><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-edit-from-here-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-map-pin-simple" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><span class="ml-1 border-0 border-l border-solid border-background-subtle pr-1" aria-hidden="true"></span><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-copy-link-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-link" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button><button class="rounded text-lg font-normal leading-sm flex bg-transparent text-text-default border border-solid border-transparent hocus:bg-element-bg-hover hocus:text-text-emphasize hover:border-element-bg-hover focus:shadow-[0_0_0_2px_#77777733] focus:border-element-border-hover disabled:bg-transparent disabled:hocus:bg-transparent disabled:hocus:border-transparent disabled:text-element-text-disabled disabled:hocus:text-element-text-disabled p-0.5 ui-code-block-zoom-button ui-code-block-toolbar-type-image" data-state="closed"><i class="inline-flex ph ph-magnifying-glass-plus" aria-hidden="true" style="width: 20px; height: 20px; font-size: 20px; line-height: 20px;"></i></button></div></div><img src="https://hackmd.io/_uploads/Bk6quC-Pbg.jpg" alt="checkin_qrcode_mockup" class="offline-handled error-handled image-toolbar-handled" loading="lazy" style="width: auto; height: auto;"></span></p>
 <ul>
 <li><strong><span>QR Code 規則</span></strong><span>: 每個學員的每個「課程 (Course)」,都會產生一組專屬報到 QR Code (該課程下所有場次共用此碼)。</span></li>
 <li><strong><span>學員端</span></strong><span>: 上課前收到專屬 QR Code (整個課程共用)，上課日出示供掃描。</span></li>
@@ -731,63 +735,10 @@
 <li><strong><span>紀錄內容</span></strong><span>: 需包含操作者帳號、操作時間、IP 位址、異動前內容 (Before)、異動後內容 (After)。</span></li>
 </ul>
 </li>
-</ul><hr><h2 id="3-開發時程與方案建議-Development-Schedule-amp-Strategic-Options" data-id="3-開發時程與方案建議-Development-Schedule-amp-Strategic-Options"><a class="anchor hidden-xs" href="#3-開發時程與方案建議-Development-Schedule-amp-Strategic-Options" title="3-開發時程與方案建議-Development-Schedule-amp-Strategic-Options"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>3. 開發時程與方案建議 (Development Schedule &amp; Strategic Options)</span></h2><p><span>本章節評估 VividooCRM 系統開發責任分派與執行方案建議。</span></p><ul>
+</ul><hr><h2 id="3-開發執行方向" data-id="3-開發執行方向"><a class="anchor hidden-xs" href="#3-開發執行方向" title="3-開發執行方向"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>3. 開發執行方向</span></h2><p><span>本章節評估 VividooCRM 系統開發責任分派與執行方案建議。</span></p><ul>
 <li><strong><span>內部團隊 (Internal)</span></strong><span>：僅負責 </span><strong><span>資料來源 API 開發</span></strong><span>（課程資料傳送、購課學員資料傳送）。</span></li>
 <li><strong><span>委外範圍 (Vendor)</span></strong><span>：負責 </span><strong><span>CRM 系統完整開發</span></strong><span>，包含前端介面、資料庫設計、CRM API 開發與串接、排程、安全性等所有工作。</span></li>
-</ul><h3 id="31-兩階段上線規劃-Phased-Go-Live-Roadmap" data-id="31-兩階段上線規劃-Phased-Go-Live-Roadmap"><a class="anchor hidden-xs" href="#31-兩階段上線規劃-Phased-Go-Live-Roadmap" title="31-兩階段上線規劃-Phased-Go-Live-Roadmap"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>3.1 兩階段上線規劃 (Phased Go-Live Roadmap)</span></h3><ul>
-<li><span>應對 </span><strong><span>「內外協作」</span></strong><span> 的風險，建議內部先完成資料來源 API，再由委外開始串接開發。</span></li>
-</ul><h4 id="🚩-Phase-1-決策與報表核心-Insight-amp-Report" data-id="🚩-Phase-1-決策與報表核心-Insight-amp-Report"><a class="anchor hidden-xs" href="#🚩-Phase-1-決策與報表核心-Insight-amp-Report" title="🚩-Phase-1-決策與報表核心-Insight-amp-Report"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🚩 Phase 1: 決策與報表核心 (Insight &amp; Report)</span></h4><ul>
-<li><strong><span>相關模組</span></strong><span>：系統基建、2.1 (儀表板)、2.2 (客戶管理)、2.3 (分群)。</span></li>
-<li><strong><span>內部團隊目標</span></strong><span>：2/23 前完成資料來源 API（課程資料、學員資料）。</span></li>
-<li><strong><span>委外團隊目標</span></strong><span>：3/23 前完成畫面與串接。</span></li>
-</ul><h4 id="🚩-Phase-2-運營與行銷核心-Operations-amp-Marketing" data-id="🚩-Phase-2-運營與行銷核心-Operations-amp-Marketing"><a class="anchor hidden-xs" href="#🚩-Phase-2-運營與行銷核心-Operations-amp-Marketing" title="🚩-Phase-2-運營與行銷核心-Operations-amp-Marketing"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>🚩 Phase 2: 運營與行銷核心 (Operations &amp; Marketing)</span></h4><ul>
-<li><strong><span>相關模組</span></strong><span>：2.4 (課程管理)、2.5 (報到)、2.6 (行銷)、2.7 (系統管理)。</span></li>
-<li><strong><span>委外團隊目標</span></strong><span>：4/30 前完成所有功能上線。</span></li>
-</ul><h3 id="32-戰略方案總表-Strategic-Options-Matrix" data-id="32-戰略方案總表-Strategic-Options-Matrix"><a class="anchor hidden-xs" href="#32-戰略方案總表-Strategic-Options-Matrix" title="32-戰略方案總表-Strategic-Options-Matrix"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>3.2 戰略方案總表 (Strategic Options Matrix)</span></h3><p><span>本專案依據「功能範圍 (Scope)」與「責任歸屬 (Ownership)」之不同，拆解為四種執行方案。</span>
-<span>所有方案皆以 </span><strong><span>2026/02/09</span></strong><span> 啟動為基準。</span></p><table>
-<thead>
-<tr>
-<th style="text-align:left"><span>戰略方案</span></th>
-<th style="text-align:left"><span>核心定義</span></th>
-<th style="text-align:left"><span>時程規劃 (Timeline)</span></th>
-<th style="text-align:left"><span>優缺點與風險</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong><span>A. 全功能版</span></strong><br><span>(Full Feature)</span></td>
-<td style="text-align:left"><strong><span>【委外全包】</span></strong><br><span>前端+後端+資料庫+排程。</span><br><span>內部僅提供資料來源 API。</span></td>
-<td style="text-align:left"><strong><span>Phase 1</span></strong><span>: 3/23</span><br><strong><span>Phase 2</span></strong><span>: 4/30</span><br><em><span>(兩階段上線)</span></em></td>
-<td style="text-align:left"><span>🟢 </span><strong><span>推薦</span></strong><span>。責任清楚，內部負擔最輕。</span><br><span>🟢 完整解決代課/住宿/報到問題。</span></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><span>B. 精簡運營版</span></strong><br><span>(Lean Ops)</span></td>
-<td style="text-align:left"><strong><span>【省略行銷模組】</span></strong><br><span>不開發 2.6 行銷自動化。</span><br><span>EDM 用現有工具。</span></td>
-<td style="text-align:left"><strong><span>Phase 1</span></strong><span>: 3/23</span><br><strong><span>Phase 2</span></strong><span>: 4/16</span><br><em><span>(提早2週)</span></em></td>
-<td style="text-align:left"><span>🟡 </span><strong><span>折衷</span></strong><span>。節省預算，但需用外部 EDM 工具。</span><br><span>🟢 核心運營功能完整。</span></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><span>C. 決策報表版</span></strong><br><span>(Dashboard Only)</span></td>
-<td style="text-align:left"><strong><span>【僅儀表板+客戶管理】</span></strong><br><span>放棄運營功能。</span><br><span>僅做數據可視化與客戶資料庫。</span></td>
-<td style="text-align:left"><strong><span>Single Phase</span></strong><span>: 3/23</span><br><em><span>(一次性交付)</span></em></td>
-<td style="text-align:left"><span>🟢 </span><strong><span>快速交付</span></strong><span>。老闆看數據就好。</span><br><span>🔴 現場運營痛苦依舊 (紙本/舊系統)。</span></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong><span>D. 舊制並行版</span></strong><br><span>(Legacy Mix)</span></td>
-<td style="text-align:left"><strong><span>【省略學員管理】</span></strong><br><span>不開發 2.4.5 學員管理。</span><br><span>學員管理用現有系統。</span></td>
-<td style="text-align:left"><strong><span>Phase 1</span></strong><span>: 3/23</span><br><strong><span>Phase 2</span></strong><span>: 4/23</span><br><em><span>(標準時程)</span></em></td>
-<td style="text-align:left"><span>🟡 </span><strong><span>妥協方案</span></strong><span>。避開最複雜模組。</span><br><span>🔴 </span><strong><span>風險</span></strong><span>：代課/住宿拆分須靠舊系統，可能資料不一致。</span></td>
-</tr>
-</tbody>
-</table><blockquote>
-<p><strong><span>💡 最終決策建議 (Final Recommendation)</span></strong></p>
-<ul>
-<li><strong><span>首選 (Best)</span></strong><span>：</span><strong><span>方案 A</span></strong><span> - 委外全包，內部僅需維護資料來源 API，長期維運成本最低。</span></li>
-<li><strong><span>次選 (Budget)</span></strong><span>：</span><strong><span>方案 B</span></strong><span> - 省下行銷模組，用現有 EDM 工具暫時替代。</span></li>
-<li><strong><span>折衷方案</span></strong><span>：</span><strong><span>方案 D</span></strong><span> - 學員管理用舊系統，但須注意資料一致性風險。</span></li>
-<li><strong><span>最低門檻</span></strong><span>：</span><strong><span>方案 C</span></strong><span> - 只做報表，運營流程維持現狀。</span></li>
-</ul>
-</blockquote><h3 id="33-戰略方案功能比較表-Feature-Comparison" data-id="33-戰略方案功能比較表-Feature-Comparison"><a class="anchor hidden-xs" href="#33-戰略方案功能比較表-Feature-Comparison" title="33-戰略方案功能比較表-Feature-Comparison"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>3.3 戰略方案功能比較表 (Feature Comparison)</span></h3><table>
+</ul><h3 id="31-可能方案比較表-Feature-Comparison" data-id="31-可能方案比較表-Feature-Comparison"><a class="anchor hidden-xs" href="#31-可能方案比較表-Feature-Comparison" title="31-可能方案比較表-Feature-Comparison"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>3.1 可能方案比較表 (Feature Comparison)</span></h3><table>
 <thead>
 <tr>
 <th style="text-align:left"><span>功能模組 (Module)</span></th>
@@ -871,7 +822,7 @@
 </tbody>
 </table><blockquote>
 <p><strong><span>圖例</span></strong><span>：✅ 包含 ｜ ❌ 不包含</span></p>
-</blockquote><h3 id="附件一、Customers-Import-Template" data-id="附件一、Customers-Import-Template"><a class="anchor hidden-xs" href="#附件一、Customers-Import-Template" title="附件一、Customers-Import-Template"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件一、Customers Import Template</span></h3><table>
+</blockquote><h1 id="附件" data-id="附件"><a class="anchor hidden-xs" href="#附件" title="附件"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件</span></h1><h2 id="附件一、Customers-Import-Template" data-id="附件一、Customers-Import-Template"><a class="anchor hidden-xs" href="#附件一、Customers-Import-Template" title="附件一、Customers-Import-Template"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件一、Customers Import Template</span></h2><table>
 <thead>
 <tr>
 <th style="text-align:left"><span>類別</span></th>
@@ -1056,7 +1007,7 @@
 <td style="text-align:left"></td>
 </tr>
 </tbody>
-</table><h3 id="附件二、學員名單" data-id="附件二、學員名單"><a class="anchor hidden-xs" href="#附件二、學員名單" title="附件二、學員名單"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件二、學員名單</span></h3><table>
+</table><h2 id="附件二、學員名單" data-id="附件二、學員名單"><a class="anchor hidden-xs" href="#附件二、學員名單" title="附件二、學員名單"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件二、學員名單</span></h2><table>
 <thead>
 <tr>
 <th style="text-align:left"><span>選必填</span></th>
@@ -1255,30 +1206,31 @@
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
                 <div class="toc"><ul class="nav">
-<li><a href="#VividooCRM-系統需求文件-Product-Requirements-Document" title="VividooCRM 系統需求文件 (Product Requirements Document)">VividooCRM 系統需求文件 (Product Requirements Document)</a><ul class="nav">
-<li><a href="#1-核心商務邏輯-Core-Business-Logic" title="1. 核心商務邏輯 (Core Business Logic)">1. 核心商務邏輯 (Core Business Logic)</a><ul class="nav">
-<li><a href="#11-核心定義與架構-Core-Definitions-amp-Architecture" title="1.1 核心定義與架構 (Core Definitions &amp; Architecture)">1.1 核心定義與架構 (Core Definitions &amp; Architecture)</a></li>
-<li><a href="#12-系統邊界與整合架構-System-Boundary-amp-Integration" title="1.2 系統邊界與整合架構 (System Boundary &amp; Integration)">1.2 系統邊界與整合架構 (System Boundary &amp; Integration)</a></li>
+<li class=""><a href="#VividooCRM-系統需求文件-Product-Requirements-Document" title="VividooCRM 系統需求文件 (Product Requirements Document)">VividooCRM 系統需求文件 (Product Requirements Document)</a><ul class="nav">
+<li class=""><a href="#1-核心商務邏輯-Core-Business-Logic" title="1. 核心商務邏輯 (Core Business Logic)">1. 核心商務邏輯 (Core Business Logic)</a><ul class="nav">
+<li class=""><a href="#11-核心定義與架構-Core-Definitions-amp-Architecture" title="1.1 核心定義與架構 (Core Definitions &amp; Architecture)">1.1 核心定義與架構 (Core Definitions &amp; Architecture)</a></li>
+<li class=""><a href="#12-系統邊界與整合架構-System-Boundary-amp-Integration" title="1.2 系統邊界與整合架構 (System Boundary &amp; Integration)">1.2 系統邊界與整合架構 (System Boundary &amp; Integration)</a></li>
 </ul>
 </li>
-<li><a href="#2-核心功能模組-Core-Modules" title="2. 核心功能模組 (Core Modules)">2. 核心功能模組 (Core Modules)</a><ul class="nav">
-<li><a href="#21-營銷數據儀表板-Dashboard" title="2.1 營銷數據儀表板 (Dashboard)">2.1 營銷數據儀表板 (Dashboard)</a></li>
-<li><a href="#22-學員管理-Student-CRM" title="2.2 學員管理 (Student CRM)">2.2 學員管理 (Student CRM)</a></li>
-<li><a href="#23-客戶分群管理-Customer-Segmentation-Analysis" title="2.3 客戶分群管理 (Customer Segmentation Analysis)">2.3 客戶分群管理 (Customer Segmentation Analysis)</a></li>
+<li class=""><a href="#2-核心功能模組-Core-Modules" title="2. 核心功能模組 (Core Modules)">2. 核心功能模組 (Core Modules)</a><ul class="nav">
+<li class=""><a href="#21-營銷數據儀表板-Dashboard" title="2.1 營銷數據儀表板 (Dashboard)">2.1 營銷數據儀表板 (Dashboard)</a></li>
+<li class=""><a href="#22-學員管理-Student-CRM" title="2.2 學員管理 (Student CRM)">2.2 學員管理 (Student CRM)</a></li>
+<li class=""><a href="#23-客戶分群管理-Customer-Segmentation-Analysis" title="2.3 客戶分群管理 (Customer Segmentation Analysis)">2.3 客戶分群管理 (Customer Segmentation Analysis)</a></li>
 <li><a href="#24-課程專案管理-Course-amp-Event-Management-Module-Complete" title="2.4 課程專案管理 (Course &amp; Event Management) [Module Complete]">2.4 課程專案管理 (Course &amp; Event Management) [Module Complete]</a></li>
 <li><a href="#25-報到管理-Check-in-Management" title="2.5 報到管理 (Check-in Management)">2.5 報到管理 (Check-in Management)</a></li>
 <li><a href="#26-行銷自動化-EDM-Marketing" title="2.6 行銷自動化 (EDM Marketing)">2.6 行銷自動化 (EDM Marketing)</a></li>
 <li><a href="#27-系統管理-System-Administration" title="2.7 系統管理 (System Administration)">2.7 系統管理 (System Administration)</a></li>
 </ul>
 </li>
-<li><a href="#3-開發時程與方案建議-Development-Schedule-amp-Strategic-Options" title="3. 開發時程與方案建議 (Development Schedule &amp; Strategic Options)">3. 開發時程與方案建議 (Development Schedule &amp; Strategic Options)</a><ul class="nav">
-<li><a href="#31-兩階段上線規劃-Phased-Go-Live-Roadmap" title="3.1 兩階段上線規劃 (Phased Go-Live Roadmap)">3.1 兩階段上線規劃 (Phased Go-Live Roadmap)</a></li>
-<li><a href="#32-戰略方案總表-Strategic-Options-Matrix" title="3.2 戰略方案總表 (Strategic Options Matrix)">3.2 戰略方案總表 (Strategic Options Matrix)</a></li>
-<li><a href="#33-戰略方案功能比較表-Feature-Comparison" title="3.3 戰略方案功能比較表 (Feature Comparison)">3.3 戰略方案功能比較表 (Feature Comparison)</a></li>
-<li><a href="#附件一、Customers-Import-Template" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
-<li><a href="#附件二、學員名單" title="附件二、學員名單">附件二、學員名單</a></li>
+<li><a href="#3-開發執行方向" title="3. 開發執行方向">3. 開發執行方向</a><ul class="nav">
+<li><a href="#31-可能方案比較表-Feature-Comparison" title="3.1 可能方案比較表 (Feature Comparison)">3.1 可能方案比較表 (Feature Comparison)</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#附件" title="附件">附件</a><ul class="nav">
+<li><a href="#附件一、Customers-Import-Template" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
+<li><a href="#附件二、學員名單" title="附件二、學員名單">附件二、學員名單</a></li>
 </ul>
 </li>
 </ul>
@@ -1288,30 +1240,31 @@
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
         <div class="toc"><ul class="nav">
-<li><a href="#VividooCRM-系統需求文件-Product-Requirements-Document" title="VividooCRM 系統需求文件 (Product Requirements Document)">VividooCRM 系統需求文件 (Product Requirements Document)</a><ul class="nav">
-<li><a href="#1-核心商務邏輯-Core-Business-Logic" title="1. 核心商務邏輯 (Core Business Logic)">1. 核心商務邏輯 (Core Business Logic)</a><ul class="nav">
-<li><a href="#11-核心定義與架構-Core-Definitions-amp-Architecture" title="1.1 核心定義與架構 (Core Definitions &amp; Architecture)">1.1 核心定義與架構 (Core Definitions &amp; Architecture)</a></li>
-<li><a href="#12-系統邊界與整合架構-System-Boundary-amp-Integration" title="1.2 系統邊界與整合架構 (System Boundary &amp; Integration)">1.2 系統邊界與整合架構 (System Boundary &amp; Integration)</a></li>
+<li class=""><a href="#VividooCRM-系統需求文件-Product-Requirements-Document" title="VividooCRM 系統需求文件 (Product Requirements Document)">VividooCRM 系統需求文件 (Product Requirements Document)</a><ul class="nav">
+<li class=""><a href="#1-核心商務邏輯-Core-Business-Logic" title="1. 核心商務邏輯 (Core Business Logic)">1. 核心商務邏輯 (Core Business Logic)</a><ul class="nav">
+<li class=""><a href="#11-核心定義與架構-Core-Definitions-amp-Architecture" title="1.1 核心定義與架構 (Core Definitions &amp; Architecture)">1.1 核心定義與架構 (Core Definitions &amp; Architecture)</a></li>
+<li class=""><a href="#12-系統邊界與整合架構-System-Boundary-amp-Integration" title="1.2 系統邊界與整合架構 (System Boundary &amp; Integration)">1.2 系統邊界與整合架構 (System Boundary &amp; Integration)</a></li>
 </ul>
 </li>
-<li><a href="#2-核心功能模組-Core-Modules" title="2. 核心功能模組 (Core Modules)">2. 核心功能模組 (Core Modules)</a><ul class="nav">
-<li><a href="#21-營銷數據儀表板-Dashboard" title="2.1 營銷數據儀表板 (Dashboard)">2.1 營銷數據儀表板 (Dashboard)</a></li>
-<li><a href="#22-學員管理-Student-CRM" title="2.2 學員管理 (Student CRM)">2.2 學員管理 (Student CRM)</a></li>
-<li><a href="#23-客戶分群管理-Customer-Segmentation-Analysis" title="2.3 客戶分群管理 (Customer Segmentation Analysis)">2.3 客戶分群管理 (Customer Segmentation Analysis)</a></li>
+<li class=""><a href="#2-核心功能模組-Core-Modules" title="2. 核心功能模組 (Core Modules)">2. 核心功能模組 (Core Modules)</a><ul class="nav">
+<li class=""><a href="#21-營銷數據儀表板-Dashboard" title="2.1 營銷數據儀表板 (Dashboard)">2.1 營銷數據儀表板 (Dashboard)</a></li>
+<li class=""><a href="#22-學員管理-Student-CRM" title="2.2 學員管理 (Student CRM)">2.2 學員管理 (Student CRM)</a></li>
+<li class=""><a href="#23-客戶分群管理-Customer-Segmentation-Analysis" title="2.3 客戶分群管理 (Customer Segmentation Analysis)">2.3 客戶分群管理 (Customer Segmentation Analysis)</a></li>
 <li><a href="#24-課程專案管理-Course-amp-Event-Management-Module-Complete" title="2.4 課程專案管理 (Course &amp; Event Management) [Module Complete]">2.4 課程專案管理 (Course &amp; Event Management) [Module Complete]</a></li>
 <li><a href="#25-報到管理-Check-in-Management" title="2.5 報到管理 (Check-in Management)">2.5 報到管理 (Check-in Management)</a></li>
 <li><a href="#26-行銷自動化-EDM-Marketing" title="2.6 行銷自動化 (EDM Marketing)">2.6 行銷自動化 (EDM Marketing)</a></li>
 <li><a href="#27-系統管理-System-Administration" title="2.7 系統管理 (System Administration)">2.7 系統管理 (System Administration)</a></li>
 </ul>
 </li>
-<li><a href="#3-開發時程與方案建議-Development-Schedule-amp-Strategic-Options" title="3. 開發時程與方案建議 (Development Schedule &amp; Strategic Options)">3. 開發時程與方案建議 (Development Schedule &amp; Strategic Options)</a><ul class="nav">
-<li><a href="#31-兩階段上線規劃-Phased-Go-Live-Roadmap" title="3.1 兩階段上線規劃 (Phased Go-Live Roadmap)">3.1 兩階段上線規劃 (Phased Go-Live Roadmap)</a></li>
-<li><a href="#32-戰略方案總表-Strategic-Options-Matrix" title="3.2 戰略方案總表 (Strategic Options Matrix)">3.2 戰略方案總表 (Strategic Options Matrix)</a></li>
-<li><a href="#33-戰略方案功能比較表-Feature-Comparison" title="3.3 戰略方案功能比較表 (Feature Comparison)">3.3 戰略方案功能比較表 (Feature Comparison)</a></li>
-<li><a href="#附件一、Customers-Import-Template" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
-<li><a href="#附件二、學員名單" title="附件二、學員名單">附件二、學員名單</a></li>
+<li><a href="#3-開發執行方向" title="3. 開發執行方向">3. 開發執行方向</a><ul class="nav">
+<li><a href="#31-可能方案比較表-Feature-Comparison" title="3.1 可能方案比較表 (Feature Comparison)">3.1 可能方案比較表 (Feature Comparison)</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#附件" title="附件">附件</a><ul class="nav">
+<li><a href="#附件一、Customers-Import-Template" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
+<li><a href="#附件二、學員名單" title="附件二、學員名單">附件二、學員名單</a></li>
 </ul>
 </li>
 </ul>

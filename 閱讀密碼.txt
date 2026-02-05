@@ -1,0 +1,37 @@
+<meta name="robots" content="noindex, nofollow, noarchive" />
+<meta name="googlebot" content="noindex, nofollow, noarchive" />
+
+<style>
+  /* 初始狀態先隱藏整個網頁內容 */
+  body { display: none; }
+</style>
+
+<script>
+  (function() {
+    const PASSWORD = 'cwgvdoc';
+    const storageKey = 'page_auth_token';
+
+    function checkAuth() {
+      // 檢查是否已經輸入過（sessionStorage 關閉分頁即失效，較安全）
+      if (sessionStorage.getItem(storageKey) === 'true') {
+        document.documentElement.style.display = 'block';
+        document.body.style.display = 'block';
+        return;
+      }
+
+      const userInput = prompt('請輸入密碼以查看內容：');
+
+      if (userInput === PASSWORD) {
+        sessionStorage.setItem(storageKey, 'true');
+        document.documentElement.style.display = 'block';
+        document.body.style.display = 'block';
+      } else {
+        alert('密碼錯誤，存取被拒。');
+        window.location.reload(); // 密碼錯誤則重新整理
+      }
+    }
+
+    // 確保 DOM 載入時執行
+    document.addEventListener('DOMContentLoaded', checkAuth);
+  })();
+</script>

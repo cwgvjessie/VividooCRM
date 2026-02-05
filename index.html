@@ -26,14 +26,14 @@
         return;
       }
 
-      const userInput = prompt('請輸入密碼以查看內容：');
+      const userInput = prompt('請輸入閱讀密碼以查看內容：');
 
       if (userInput === PASSWORD) {
         sessionStorage.setItem(storageKey, 'true');
         document.documentElement.style.display = 'block';
         document.body.style.display = 'block';
       } else {
-        alert('密碼錯誤，存取被拒。');
+        alert('閱讀密碼錯誤，存取被拒。');
         window.location.reload(); // 密碼錯誤則重新整理
       }
     }

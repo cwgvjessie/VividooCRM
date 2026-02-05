@@ -1,0 +1,4 @@
+title: 我的文件庫
+theme: jekyll-theme-cayman
+# 確保 images 資料夾會被包含在輸出的 HTML 網站中
+include: [images]

@@ -3,6 +3,8 @@
 <html lang="en" theme="light">
 
 <head>
+	<meta name="robots" content="noindex, nofollow, noarchive" />
+<meta name="googlebot" content="noindex, nofollow, noarchive" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -59,6 +61,63 @@
 </head>
 
 <body>
+	<!-- 密碼門檻 -->
+  <section class="gate">
+    <div class="card">
+      <h1>此頁面已受保護</h1>
+      <p>請輸入閱讀密碼。</p>
+      <form id="pwForm" autocomplete="off">
+        <label for="pw">閱讀密碼</label>
+        <input id="pw" name="pw" type="password" inputmode="text" />
+        <button type="submit">解鎖</button>
+        <div id="msg" class="msg" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 真正內容：預設隱藏 -->
+  <main id="content" class="content hidden">
+    <div class="card">
+      <h2>機密內容標題</h2>
+      <p>這裡放你的內容…</p>
+      <!-- …你的既有 HTML … -->
+    </div>
+  </main>
+
+  <script>
+    // 固定密碼（僅防君子）：任何人仍可在原始碼看到
+    const PAGE_PASSWORD = "cwgvdoc";
+
+    // 可選：用 sessionStorage 讓同一分頁刷新後仍維持解鎖
+    const KEY = "page_unlocked_v1";
+    const form = document.getElementById("pwForm");
+    const input = document.getElementById("pw");
+    const msg = document.getElementById("msg");
+    const gate = document.querySelector(".gate");
+    const content = document.getElementById("content");
+
+    function unlock() {
+      gate.classList.add("hidden");
+      content.classList.remove("hidden");
+      sessionStorage.setItem(KEY, "1");
+    }
+
+    // 若之前已解鎖，直接顯示內容
+    if (sessionStorage.getItem(KEY) === "1") unlock();
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const ok = input.value === PAGE_PASSWORD;
+      if (ok) {
+        unlock();
+      } else {
+        msg.textContent = "密碼錯誤，請再試一次。";
+        input.value = "";
+        input.focus();
+      }
+    });
+  </script>
+
     <div id="doc" class="markdown-body container-fluid comment-inner no-highlight-all comment-enabled" data-hard-breaks="false" lang="en-US"><h1 id="VividooCRM-系統需求文件-Product-Requirements-Document" data-id="VividooCRM-系統需求文件-Product-Requirements-Document"><a class="anchor hidden-xs" href="#VividooCRM-系統需求文件-Product-Requirements-Document" title="VividooCRM-系統需求文件-Product-Requirements-Document"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>VividooCRM 系統需求文件 (Product Requirements Document)</span></h1><h2 id="1-核心商務邏輯-Core-Business-Logic" data-id="1-核心商務邏輯-Core-Business-Logic"><a class="anchor hidden-xs" href="#1-核心商務邏輯-Core-Business-Logic" title="1-核心商務邏輯-Core-Business-Logic"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>1. 核心商務邏輯 (Core Business Logic)</span></h2><p><span>VividooCRM，整合了客戶關係管理、銷售訂單、課程活動管理、自動化行銷 (EDM) 系統。</span></p><h3 id="11-核心定義與架構-Core-Definitions-amp-Architecture" data-id="11-核心定義與架構-Core-Definitions-amp-Architecture"><a class="anchor hidden-xs" href="#11-核心定義與架構-Core-Definitions-amp-Architecture" title="11-核心定義與架構-Core-Definitions-amp-Architecture"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>1.1 核心定義與架構 (Core Definitions &amp; Architecture)</span></h3><ul>
 <li><strong><span>學員 (Students)</span></strong><span>：完成課程報名流程的正式學員（含已付款/待付款）。</span></li>
 <li><strong><span>潛客 (Leads)</span></strong><span>：僅填寫諮詢表單，尚未完成報名的潛在客戶（路人）。</span></li>

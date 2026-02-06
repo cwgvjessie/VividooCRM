@@ -238,28 +238,32 @@
 </ul>
 </li>
 </ul><h3 id="22-學員管理-Student-CRM" data-id="22-學員管理-Student-CRM"><a class="anchor hidden-xs" href="#22-學員管理-Student-CRM" title="22-學員管理-Student-CRM"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.2 學員管理 (Student CRM)</span></h3><ul>
-<li><strong><span>唯一識別值 (Unique Key)</span></strong><span>：以 </span><strong><span>Email</span></strong><span> 為唯一識別值。</span></li>
+<li><strong><span>唯一識別值 (Unique Key)</span></strong><span>：以 </span><strong><span>Email+學員名字</span></strong><span> 為唯一識別值。</span></li>
+
+<li><strong><span>客戶列表 (Student List)</span></strong><span>:</span>
+<ul>
+<li><strong><span>基本資料</span></strong><span>: 參考 </span><a href="#Customers"><span>附件一、Customers Import Template</span></a></li>
+<li><strong><span>頭像</span></strong><span>: 逐一設定；可新增/修改/刪除頭像</span></li>
+<li><strong><span>客戶狀態</span></strong><span>：啟用/不啟用; </span><strong><span>不提供</span></strong><span>刪除功能</span></li>
+<li><strong><span>標籤 (Tags)</span></strong><span>: 可以選擇現有的標籤;多選；但</span><strong><span>不能</span></strong><span>在此新增標籤。</span></li>
+<li><strong><span>客戶類型</span></strong><span>：學員/潛客/SSVIP/SVIP/VIP/常客/高消費</span></li><>
+</ul>
+</li>
 <li><strong><span>自動同步邏輯 (Auto-Sync)</span></strong><span>：</span>
 <ul>
 <li><strong><span>API 匯入時</span></strong><span>：系統依照 Email 比對，若 CRM 中已存在該 Email，則自動更新學員資料 (新蓋舊)；若不存在則新增。</span></li>
 <li><strong><span>學員資料異動時</span></strong><span>：任何時候修改學員資料，系統需即時同步更新對應 Email 的客戶檔案。</span></li>
+<li><strong><span>客戶類型定時更新</span></strong><span>：每日定時更新一次，1. 當客戶從課程的學員名單移除，且身上已無任何已報名的課程，則此此客戶類型要從學員轉變為潛客。
 </ul>
 </li>
-<li><strong><span>客戶列表 (Student List)</span></strong><span>:</span>
-<ul>
-<li><strong><span>基本資料</span></strong><span>: 參考 </span><a href="#%E9%99%84%E4%BB%B6%E4%B8%80"><span>附件一、Customers Import Template</span></a></li>
-<li><strong><span>頭像</span></strong><span>: 逐一設定；可新增/修改/刪除頭像</span></li>
-<li><strong><span>客戶狀態</span></strong><span>：啟用/不啟用; </span><strong><span>不提供</span></strong><span>刪除功能</span></li>
-<li><strong><span>標籤 (Tags)</span></strong><span>: 可以選擇現有的標籤;多選；但</span><strong><span>不能</span></strong><span>在此新增標籤。</span></li>
-<li><strong><span>客戶類型</span></strong><span>：學員/潛客/SSVIP/SVIP/VIP/常客/高消費</span></li>
-</ul>
-</li>
+
+	
 <li><strong><span>資料匯入</span></strong><span>: 支援批次匯入客戶資料。</span></li>
 </ul><h3 id="23-客戶分群管理-Customer-Segmentation-Analysis" data-id="23-客戶分群管理-Customer-Segmentation-Analysis"><a class="anchor hidden-xs" href="#23-客戶分群管理-Customer-Segmentation-Analysis" title="23-客戶分群管理-Customer-Segmentation-Analysis"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>2.3 客戶分群管理 (Customer Segmentation Analysis)</span></h3><p><span>專為進階數據分析設計的獨立模組，支援多維度篩選與視覺化報表。</span></p><ul>
 <li>
 <p><strong><span>篩選方式 (Advanced Filters)</span></strong><span>:</span></p>
 <ul>
-<li><strong><span>快速篩選客戶類型</span></strong><span>: 下拉選單；可複選 </span><code>SVIP 客戶</code><span>、</span><code>VIP 客戶</code><span>、</span><code>常客</code><span>、</span><code>高消費</code><span>。</span></li>
+<li><strong><span>快速篩選客戶類型</span></strong><span>: 下拉選單；可複選 </span><code>SVIP 客戶</code><span>、</span><code>VIP 客戶</code><span>、</span><code>常客</code><span>、</span><code>高消費</code><span>、</span><code>學員</code><span>、</span><code>潛客</code><span>。</span></li>
 <li><strong><span>自定義篩選</span></strong><span>:</span>
 <ul>
 <li><strong><span>客人報名次數</span></strong><span>: 設定最少/最多報名次數區間 (例如: 5~ 10次)</span></li>
@@ -666,6 +670,7 @@
 <li><strong><span>手動異動</span></strong><span>: 工作人員可於後台手動切換特定場次，並針對每位學員手動修改 </span><code>已報到</code><span> / </span><code>未報到</code><span> 狀態。</span></li>
 <li><strong><span>報到操作</span></strong><span>: 點擊確認完成報到，亦支援反向「取消報到」。</span></li>
 <li><strong><span>多裝置同步 (Concurrency Concurrency)</span></strong><span>: 支援多位工作人員同時以個人手機登入操作，報到狀態需即時同步，確保資料一致。</span></li>
+<li><strong><span>批次手動報到 (Concurrency Concurrency)</span></strong><span>: 介面支援一鍵全選當天同一品項&場次的"未報到"學員，將<code>未報到</code>的人<strong>統一變為<code>已報到</code></strong>strong>。</span></li>
 </ul>
 </li>
 </ul>
@@ -822,7 +827,7 @@
 </tbody>
 </table><blockquote>
 <p><strong><span>圖例</span></strong><span>：✅ 包含 ｜ ❌ 不包含</span></p>
-</blockquote><h1 id="附件" data-id="附件"><a class="anchor hidden-xs" href="#附件" title="附件"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件</span></h1><h2 id="附件一、Customers-Import-Template" data-id="附件一、Customers-Import-Template"><a class="anchor hidden-xs" href="#附件一、Customers-Import-Template" title="附件一、Customers-Import-Template"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件一、Customers Import Template</span></h2><table>
+</blockquote><h1 id="附件" data-id="附件"><a class="anchor hidden-xs" href="#附件" title="附件"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件</span></h1><h2 id="Customers" data-id="附件一、Customers-Import-Template"><a class="anchor hidden-xs" href="#Customers" title="附件一、Customers-Import-Template"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件一、Customers Import Template</span></h2><table>
 <thead>
 <tr>
 <th style="text-align:left"><span>類別</span></th>
@@ -1007,7 +1012,7 @@
 <td style="text-align:left"></td>
 </tr>
 </tbody>
-</table><h2 id="附件二、學員名單" data-id="附件二、學員名單"><a class="anchor hidden-xs" href="#附件二、學員名單" title="附件二、學員名單"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件二、學員名單</span></h2><table>
+</table><h2 id="student" data-id="附件二、學員名單"><a class="anchor hidden-xs" href="#student" title="附件二、學員名單"><span class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>附件二、學員名單</span></h2><table>
 <thead>
 <tr>
 <th style="text-align:left"><span>選必填</span></th>
@@ -1229,8 +1234,8 @@
 </ul>
 </li>
 <li><a href="#附件" title="附件">附件</a><ul class="nav">
-<li><a href="#附件一、Customers-Import-Template" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
-<li><a href="#附件二、學員名單" title="附件二、學員名單">附件二、學員名單</a></li>
+<li><a href="#Customers" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
+<li><a href="#Student" title="附件二、學員名單">附件二、學員名單</a></li>
 </ul>
 </li>
 </ul>
@@ -1263,8 +1268,8 @@
 </ul>
 </li>
 <li><a href="#附件" title="附件">附件</a><ul class="nav">
-<li><a href="#附件一、Customers-Import-Template" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
-<li><a href="#附件二、學員名單" title="附件二、學員名單">附件二、學員名單</a></li>
+<li><a href="#Customers" title="附件一、Customers Import Template">附件一、Customers Import Template</a></li>
+<li><a href="#student" title="附件二、學員名單">附件二、學員名單</a></li>
 </ul>
 </li>
 </ul>

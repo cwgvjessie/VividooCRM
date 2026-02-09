@@ -28115,7 +28115,7 @@
                 <ul>
                     <li><strong><span>角色</span></strong><span>：負責「金流、發票、既有訂單紀錄」。</span></li>
                     <li><strong><span>資料流向</span></strong><span>：單向提供 (Provider)。</span></li>
-                    <li><strong><span>責任歸屬</span></strong><span>：由貴司內部團隊維護，僅需提供
+                    <li><strong><span>責任歸屬</span></strong><span>：由遠見內部團隊維護，僅需提供
                         </span><code>GET /orders/export</code><span> 唯讀 API 供查詢或排程匯入。</span></li>
                 </ul>
             </li>
@@ -28124,7 +28124,7 @@
                     <li><strong><span>角色</span></strong><span>：負責「課程執行、報到狀態、代課邏輯、行銷紀錄」。</span></li>
                     <li><strong><span>資料流向</span></strong><span>：接收訂單資料後，於本地資料庫建立「擴充欄位 (Execution Data)」。</span></li>
                     <li><strong><span>優勢</span></strong><span>：外包廠商 </span><strong><span>不需觸碰</span></strong><span>
-                            貴司核心資料庫，僅需透過標準 API 取得資料，即可獨立開發所有 CRM 功能。</span></li>
+                            遠見核心資料庫，僅需透過標準 API 取得資料，即可獨立開發所有 CRM 功能。</span></li>
                 </ul>
             </li>
         </ul>
@@ -28271,11 +28271,14 @@
             </li>
             <li><strong><span>自動同步邏輯 (Auto-Sync)</span></strong><span>：</span>
                 <ul>
-                    <li><strong><span>API 匯入時</span></strong><span>：系統依照 Email 比對，若 CRM 中已存在該 Email，則自動更新學員資料
+                    <li><strong><span>API 匯入時</span></strong><span>：系統依照 <B>Email +姓名 </B> 比對。 若 CRM 中已存在該 <B>Email +姓名
+                            </B> ，則自動更新學員資料
                             (新蓋舊)；若不存在則新增。</span></li>
-                    <li><strong><span>學員資料異動時</span></strong><span>：任何時候修改學員資料，系統需即時同步更新對應 Email 的客戶檔案。</span></li>
+                    <li><strong><span></span>如果遇到重複email，但不同姓名，亦新增資料</span></strong><span></span>
+                    <li><strong><span></span>如果遇到重複姓名，但不同email，亦新增資料</span></strong><span></span>
+                    <li><strong><span>學員資料異動時</span></strong><span>：任何時候修改學員資料，系統需即時同步更新對應客戶檔案。</span></li>
                     <li><strong><span>客戶類型定時更新</span></strong><span>：每日定時更新一次，<br>
-                            1. 當客戶從課程的學員名單移除，且<strong><span>身上已無任何已報名的課程</strong><span>，則此此客戶類型要從學員轉變為潛客。<br>
+                            1. 當客戶從課程的學員名單移除，且<strong><span>身上已無任何已報名的課程</strong><span>，則此客戶類型要從學員轉變為潛客。<br>
                                 2. 當<strong><span>潛客</strong><span>報名任一課程，則此此客戶類型要從學員轉變為學員。
                 </ul>
             </li>
@@ -29010,8 +29013,16 @@
                 <ul>
                     <li><strong><span>活動列表</span></strong><span>: 顯示活動名稱、使用模板、執行狀態。</span></li>
                     <li><strong><span>成效數據</span></strong><span>: 整合
-                        </span><code>發送數 (Sent)</code><span>、</span><code>開信率 (Open Rate)</code><span>、</span><code>點擊率 (Click Rate)</code><span>
-                            統計。</span></li>
+                        </span><code>發送數 (Sent)</code><span>、</span><code>開信率 (Open Rate)</code><sup>備註</sup><span>、</span>
+                        <code>點擊率(Click Rate)</code><span>
+                            統計。</span>
+                    </li>
+                    <ul>
+                        <li>備註
+                            </br>已知限制：email之前實作發現開信tracking 會被擋所以只能用點擊特定連結知道有無開信。
+                            </br>學院需求：以實務來說，由於學員開信閱讀時間有限，若只能用點擊特定連結確認有無開信，便需要讓點擊連結<B>明顯一點</B>，或是有其他做法來確保開信資訊正確性。
+                        </li>
+                    </ul>
                     <li><strong><span>排程功能</span></strong><span>: 支援預約發送時間。</span></li>
                 </ul>
             </li>
@@ -29190,7 +29201,8 @@
         <h1 id="4-開發架構" data-id="4-開發架構"><a class="anchor hidden-xs" href="#4-開發架構" title="4. 開發架構"><span
                     class="octicon octicon-link ph ph-link-simple-horizontal"></span></a><span>4. 開發架構</span></h1>
         <ul>
-            <li><span>前端維持python</span></li>
+            <li><span>前端使用TypeScript 框架是react</span></li>
+            <li><span>後端使用python 框架是 Django</span></li>
             <li><span>資料庫</span>
                 <ul>
                     <li><span><strong>項目</strong> (規格)：MySQL 8.0 InnoDB</span></li>
